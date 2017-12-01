@@ -1,0 +1,18 @@
+{
+    "name": "koa-vue-notes-project",
+    "version": "0.0.1",
+    "description": "koa-vue-notes-project",
+    "author": "John Datserakis",
+    "private": true,
+    "scripts": {
+        "postinstall": "cd api && npm install; cd ../web && npm install",
+        "api": "cd api && npm run watch",
+        "web": "cd web && npm run watch",
+        "watch": "concurrent --kill-others \"npm run api\" \"npm run web\"",
+        "test": "cd api && npm run test; cd ../web && npm run test",
+        "build": "cd api && npm run build; cd ../web && npm run build"
+    },
+    "devDependencies": {
+        "concurrently": "^3.5.0"
+    }
+}
